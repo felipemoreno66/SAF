@@ -1,0 +1,149 @@
+{
+  "Header": {
+    "title": "SAF Mobility",
+    "paragraph": "Superior Advanced Fleet",
+    "welcomeMessage": "Bienvenido a SAF Mobility: Soluciones que impulsan tu camino."
+  },
+  "About": {
+    "paragraph": "En SAF Mobility, somos líderes en la venta y gestión de vehículos comerciales, ofreciendo soluciones integrales que impulsan el éxito de nuestros clientes. Con una amplia experiencia en el sector automotriz, nos especializamos en la distribución de camiones, carros, y vans que satisfacen las necesidades más exigentes de las empresas modernas. Nuestro enfoque está en la calidad, la innovación y la personalización, asegurando que cada cliente reciba no solo un vehículo, sino una herramienta estratégica para su negocio.",
+    "Why": [
+      "Experiencia: Expertos en vehículos comerciales.",
+      "Calidad: Productos de alta durabilidad.",
+      "Personalización: Soluciones a medida.",
+      "Innovación: Tecnología avanzada."
+    ],
+    "Why2": [
+      "Soporte Técnico: Asistencia constante.",
+      "Mantenimiento Preventivo: Extiende la vida útil de tu flota.",
+      "Gestión Eficiente: Optimiza tus operaciones.",
+      "Confianza: Compromiso con la satisfacción del cliente."
+    ]
+  },
+  "Gallery": [
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/01-large.jpg",
+      "smallImage": "img/portfolio/01-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/02-large.jpg",
+      "smallImage": "img/portfolio/02-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/03-large.jpg",
+      "smallImage": "img/portfolio/03-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/04-large.jpg",
+      "smallImage": "img/portfolio/04-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/05-large.jpg",
+      "smallImage": "img/portfolio/05-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/06-large.jpg",
+      "smallImage": "img/portfolio/06-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/07-large.jpg",
+      "smallImage": "img/portfolio/07-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/08-large.jpg",
+      "smallImage": "img/portfolio/08-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/09-large.jpg",
+      "smallImage": "img/portfolio/09-small.jpg"
+    }
+  ],
+  "Features": [
+    {
+      "icon": "fa fa-comments-o",
+      "name": "Consultoría de Flotas",
+      "text": "Ofrecemos asesoría experta en la selección y gestión de flotas de vehículos para asegurar que tu empresa cuente con los mejores recursos de transporte."
+    },
+    {
+      "icon": "fa fa-cart-arrow-down",
+      "name": "Ventas Personalizadas",
+      "text": "Accede a una amplia gama de vehículos, desde camiones hasta vans, con opciones de personalización que se ajustan a las necesidades específicas de tu negocio."
+    },
+    {
+      "icon": "fa fa-cloud-download",
+      "name": "Mantenimiento Preventivo",
+      "text": "Asegura el máximo rendimiento de tu flota con nuestro servicio de mantenimiento preventivo, diseñado para minimizar el tiempo de inactividad y extender la vida útil de tus vehículos."
+    },
+    {
+      "icon": "fa fa-language",
+      "name": "Gestión de Flotas",
+      "text": "Soluciones integrales para la gestión de flotas que optimizan la operación y reducen los costos operativos, mejorando la eficiencia de tu negocio."
+    }
+  ],
+"Services": [
+    {
+      "icon": "fa fa-truck",
+      "name": "Camiones",
+      "text": "Ofrecemos una amplia gama de camiones diseñados para el transporte pesado y de larga distancia. Ideales para empresas que necesitan soluciones robustas y confiables para su logística."
+    },
+    {
+      "icon": "fa fa-bus",
+      "name": "Buses",
+      "text": "Nuestros buses son perfectos para el transporte de pasajeros, ofreciendo comodidad y seguridad en cada viaje. Disponibles en diversas configuraciones para satisfacer las necesidades de transporte público o privado."
+    },
+    {
+      "icon": "fa fa-shuttle-van",
+      "name": "Vans",
+      "text": "Las vans que ofrecemos son versátiles y espaciosas, perfectas para el transporte de mercancías o pasajeros en recorridos urbanos o interurbanos."
+    },
+    {
+      "icon": "fa fa-car",
+      "name": "Carros",
+      "text": "Disponemos de una selección de carros que combinan eficiencia, confort y tecnología de punta, ideales para el uso personal o como parte de una flota empresarial."
+    },
+    {
+      "icon": "fa fa-suv",
+      "name": "SUVs",
+      "text": "Nuestros SUVs ofrecen potencia y espacio, siendo la opción perfecta para aquellos que buscan un vehículo capaz de manejar tanto terrenos urbanos como rurales, sin comprometer el estilo."
+    }
+  ],
+  
+  "Team": [
+    {
+      "img": "img/team/01.jpg",
+      "name": "John Doe",
+      "job": "Director"
+    },
+    {
+      "img": "img/team/02.jpg",
+      "name": "Mike Doe",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/03.jpg",
+      "name": "Jane Doe",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/04.jpg",
+      "name": "Karen Doe",
+      "job": "Project Manager"
+    }
+  ],
+  "Contact": {
+    "address": "4321 California St, San Francisco, CA 12345 ",
+    "phone": "+1 123 456 1234",
+    "email": "info@company.com",
+    "facebook": "fb.com",
+    "twitter": "twitter.com",
+    "youtube": "youtube.com"
+  }
+}
