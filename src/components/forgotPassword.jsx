@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
+import { sendPasswordResetEmail } from "firebase/auth";
+import {auth} from "./firebase";
 
 const ForgotPasswordContainer = styled.div`
   padding-top: 150px;
@@ -77,14 +79,27 @@ const CancelLink = styled.a`
 `;
 
 export const ForgotPassword = ({ onNavigate }) => {
+
+  const [email, setEmail]=useState('')
+  const handleSubmit=async(e)=>{
+    e.preventDefault()
+    sendPasswordResetEmail(auth,email).then(data=>{
+      alert("El enlace para restablecer su contraseña fue enviado")
+    }).catch(err=>{
+      alert("No fue posible enviar enlace de restablecimiento")
+    })
+  }
+
   return (
     <ForgotPasswordContainer>
       <Title>¿Olvidaste tu contraseña?</Title>
       <Subtitle>Te enviaremos instrucciones sobre cómo restablecerla.</Subtitle>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <FormGroup>
           <Label>Correo</Label>
-          <Input type="email" placeholder="you@yourcompany.com" required />
+          <Input type="email" placeholder="you@yourcompany.com" 
+          onChange={(e)=>setEmail(e.target.value)}
+          required />
         </FormGroup>
         <SubmitButton type="submit">Restablecer Contraseña</SubmitButton>
         <CancelLink href="#" onClick={() => onNavigate('login')}>Cancelar</CancelLink>
