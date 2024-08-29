@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
+import {auth} from './firebase';
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const SignupContainer = styled.div`
   padding-top: 120px;
@@ -72,23 +74,47 @@ const StyledLink = styled.a`
 `;
 
 export const Signup = ({ onNavigate }) => {
+
+  const [name, setName]=useState('')
+  const [email, setEmail]=useState('')
+  const [password, setPassword]=useState('')
+  
+  const handleSubmit=async(e)=>{
+    e.preventDefault()
+    try{
+      await createUserWithEmailAndPassword(auth, email, password)
+      console.log("Account Created")
+      alert("Se ha registrado correctamente")
+    } catch(err){
+      console.log(err)
+      alert("Ocurrió un error en el registro")
+    }
+  }
+
   return (
     <SignupContainer>
       <Title>Conoce todo lo que SAF Mobility tiene para ofrecerte</Title>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <FormGroup>
           <Label>Nombre *</Label>
-          <Input type="text" placeholder="First and last name" required />
+          <Input type="text" placeholder="First and last name" 
+          onChange={(e)=>setName(e.target.value)}
+          required />
         </FormGroup>
         <FormGroup>
           <Label>Correo *</Label>
-          <Input type="email" placeholder="you@yourcompany.com" required />
+          <Input type="email" placeholder="you@yourcompany.com" 
+          onChange={(e)=>setEmail(e.target.value)}
+          required />
         </FormGroup>
         <FormGroup>
           <Label>Contraseña *</Label>
-          <Input type="password" placeholder="Password" required />
+          <Input type="password" placeholder="Password" 
+          onChange={(e)=>setPassword(e.target.value)}
+          required />
         </FormGroup>
-        <SubmitButton type="submit">Registrar</SubmitButton>
+        <SubmitButton type="submit"
+        onClick={() => onNavigate('dashboard')}>Registrar</SubmitButton>
         <p>
           ¿Ya tienes una cuenta? <StyledLink href="#" onClick={() => onNavigate('login')}>Inicia Sesión</StyledLink>
         </p>

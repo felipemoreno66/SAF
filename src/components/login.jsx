@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
+import {auth} from './firebase';
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const LoginContainer = styled.div`
   padding-top: 150px;
@@ -78,22 +80,40 @@ const ForgotPasswordLink = styled.div`
 `;
 
 export const Login = ({ onNavigate }) => {
+
+  const [email, setEmail]=useState('')
+  const [password, setPassword]=useState('')
+  
+  const handleSubmit=async(e)=>{
+    e.preventDefault()
+    try{
+      await signInWithEmailAndPassword(auth, email, password)
+      console.log("Login Succesfully")
+      alert("Ha iniciado sesión correctamente")
+    } catch(err){
+      console.log(err)
+      alert("No fue posible iniciar sesión")
+    }
+  }
+
   return (
     <LoginContainer>
       <Title>Bienvenido, Nos alegra tenerte de vuelta</Title>
-      <Form onSubmit={(e) => {
-          e.preventDefault();
-        onNavigate('dashboard'); // Cambiar el estado a 'dashboard'
-      }}>
+      <Form onSubmit={handleSubmit}>
         <FormGroup>
           <Label>Correo</Label>
-          <Input type="email" placeholder="you@yourcompany.com" required />
+          <Input type="email" placeholder="you@yourcompany.com" 
+          onChange={(e)=>setEmail(e.target.value)}
+          required />
         </FormGroup>
         <FormGroup>
           <Label>Contraseña</Label>
-          <Input type="password" placeholder="Password" required />
+          <Input type="password" placeholder="Password" 
+          onChange={(e)=>setPassword(e.target.value)}
+          required />
         </FormGroup>
-        <SubmitButton type="submit">Iniciar Sesión</SubmitButton>
+        <SubmitButton type="submit"
+        onClick={() => onNavigate('dashboard')}>Iniciar Sesión</SubmitButton>
         <ForgotPasswordLink>
           <StyledLink href="#" onClick={() => onNavigate('forgot-password')}>
             ¿Olvidaste tu contraseña?
