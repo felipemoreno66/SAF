@@ -1,7 +1,7 @@
 import { Image } from "./image";
 import React from "react";
 
-export const Gallery = (props) => {
+export const Gallery = (props, onNavigate) => {
   return (
     <div id="portfolio" className="text-center">
       <div className="container">
@@ -21,8 +21,10 @@ export const Gallery = (props) => {
                   >
                     <Image
                       title={d.title}
-                      largeImage={d.largeImage}
+                      descripcion={d.descripcion}
+                      descripcionn={d.descripcionn}
                       smallImage={d.smallImage}
+                      onNavigate={onNavigate}
                     />
                   </div>
                 ))

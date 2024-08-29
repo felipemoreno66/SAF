@@ -21,12 +21,14 @@
   },
   "Gallery": [
     {
-      "title": "Pr",
+      "title": "Hola Hola Hola",
+      "descripcion": "HolaSanti",
+      "descripcionn": "Hola Andrey",
       "largeImage": "img/portfolio/01-large.jpg",
       "smallImage": "img/portfolio/01-small.jpg"
     },
     {
-      "title": "Project Title",
+      "title": "Hola",
       "largeImage": "img/portfolio/02-large.jpg",
       "smallImage": "img/portfolio/02-small.jpg"
     },

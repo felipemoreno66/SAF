@@ -10,7 +10,8 @@ import { Team } from "./components/Team";
 import { Contact } from "./components/contact";
 import { Login } from "./components/login";
 import { Signup } from "./components/signup";
-import { ForgotPassword } from "./components/forgotPassword";  // Importar el componente ForgotPassword
+import { ForgotPassword } from "./components/forgotPassword";
+import { Portafolio } from "./components/portafolio";  // Importar el componente ForgotPassword
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
@@ -37,7 +38,7 @@ const App = () => {
             <Features data={landingPageData.Features} />
             <About data={landingPageData.About} />
             <Services data={landingPageData.Services} />
-            <Gallery data={landingPageData.Gallery} />
+            <Gallery data={landingPageData.Gallery} onNavigate={setCurrentPage}/>
             <Testimonials data={landingPageData.Testimonials} />
             <Team data={landingPageData.Team} />
             <Contact data={landingPageData.Contact} />
@@ -49,6 +50,8 @@ const App = () => {
         return <Signup onNavigate={setCurrentPage} />;  // Pasar la función setCurrentPage a Signup
       case 'forgot-password':  // Nuevo caso para ForgotPassword
         return <ForgotPassword onNavigate={setCurrentPage} />;  // Pasar la función setCurrentPage a ForgotPassword
+      case 'portafolio1':  // Nuevo caso para ForgotPassword
+        return <Portafolio onNavigate={setCurrentPage} />;  // Pasar la función setCurrentPage a ForgotPassword
       default:
         return (
           <>
@@ -56,7 +59,7 @@ const App = () => {
             <Features data={landingPageData.Features} />
             <About data={landingPageData.About} />
             <Services data={landingPageData.Services} />
-            <Gallery data={landingPageData.Gallery} />
+            <Gallery data={landingPageData.Gallery} onNavigate={setCurrentPage}/>
             <Testimonials data={landingPageData.Testimonials} />
             <Team data={landingPageData.Team} />
             <Contact data={landingPageData.Contact} />
