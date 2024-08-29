@@ -81,7 +81,10 @@ export const Login = ({ onNavigate }) => {
   return (
     <LoginContainer>
       <Title>Bienvenido, Nos alegra tenerte de vuelta</Title>
-      <Form>
+      <Form onSubmit={(e) => {
+          e.preventDefault();
+        onNavigate('dashboard'); // Cambiar el estado a 'dashboard'
+      }}>
         <FormGroup>
           <Label>Correo</Label>
           <Input type="email" placeholder="you@yourcompany.com" required />

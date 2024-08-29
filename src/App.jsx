@@ -14,6 +14,7 @@ import { ForgotPassword } from "./components/forgotPassword";
 import { Portafolio } from "./components/portafolio";  // Importar el componente ForgotPassword
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
+import { Dashboard } from "./dashboard/dashboard";
 import "./App.css";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
@@ -52,7 +53,9 @@ const App = () => {
         return <ForgotPassword onNavigate={setCurrentPage} />;  // Pasar la función setCurrentPage a ForgotPassword
       case 'portafolio1':  // Nuevo caso para ForgotPassword
         return <Portafolio onNavigate={setCurrentPage} />;  // Pasar la función setCurrentPage a ForgotPassword
-      default:
+        case 'dashboard':
+          return <Dashboard />;
+        default:
         return (
           <>
             <Header data={landingPageData.Header} />
@@ -65,12 +68,15 @@ const App = () => {
             <Contact data={landingPageData.Contact} />
           </>
         );
+  
     }
   };
 
   return (
     <div>
-      <Navigation onNavigate={setCurrentPage} currentPage={currentPage} /> {/* Pasar la función setCurrentPage y currentPage */}
+      {currentPage !== 'dashboard' && (
+        <Navigation onNavigate={setCurrentPage} currentPage={currentPage} />
+      )}
       {renderPage()}
     </div>
   );
