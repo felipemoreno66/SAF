@@ -20,6 +20,7 @@ import { Automoviles } from "./components/automoviles";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import { Dashboard } from "./dashboard/dashboard";
+import { UserProvider } from "./UserContext";
 import "./App.css";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
@@ -88,12 +89,14 @@ const App = () => {
   };
 
   return (
+    <UserProvider>
     <div>
       {currentPage !== 'dashboard' && (
         <Navigation onNavigate={setCurrentPage} currentPage={currentPage} />
       )}
       {renderPage()}
     </div>
+    </UserProvider>
   );
 };
 
