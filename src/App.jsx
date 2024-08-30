@@ -11,7 +11,12 @@ import { Contact } from "./components/contact";
 import { Login } from "./components/login";
 import { Signup } from "./components/signup";
 import { ForgotPassword } from "./components/forgotPassword";
-import { Portafolio } from "./components/portafolio";  // Importar el componente ForgotPassword
+import { Portafolio } from "./components/portafolio";  
+import { Camiones } from "./components/camiones";
+import { Vans } from "./components/vans";
+import { Buses } from "./components/buses";
+import { Suvs } from "./components/suvs";
+import { Automoviles } from "./components/automoviles";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import { Dashboard } from "./dashboard/dashboard";
@@ -53,8 +58,18 @@ const App = () => {
         return <ForgotPassword onNavigate={setCurrentPage} />;  // Pasar la función setCurrentPage a ForgotPassword
       case 'portafolio':  // Nuevo caso para ForgotPassword
         return <Portafolio onNavigate={setCurrentPage} />;  // Pasar la función setCurrentPage a ForgotPassword
-        case 'dashboard':
-          return <Dashboard />;
+      case 'camiones':  // Nuevo caso para ForgotPassword
+        return <Camiones onNavigate={setCurrentPage} />;  // Pasar la función setCurrentPage a ForgotPassword
+      case 'vans':  // Nuevo caso para ForgotPassword
+        return <Vans onNavigate={setCurrentPage} />;  // Pasar la función setCurrentPage a ForgotPassword
+      case 'buses':  // Nuevo caso para ForgotPassword
+        return <Buses onNavigate={setCurrentPage} />;
+      case 'suvs':  // Nuevo caso para ForgotPassword
+        return <Suvs onNavigate={setCurrentPage} />;  // Pasar la función setCurrentPage a ForgotPassword
+      case 'automoviles':  // Nuevo caso para ForgotPassword
+        return <Automoviles onNavigate={setCurrentPage} />;
+      case 'dashboard':
+        return <Dashboard />;
         default:
         return (
           <>
