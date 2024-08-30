@@ -35,7 +35,7 @@ export const Navigation = ({ onNavigate, currentPage }) => {
             </li>
             <li className={currentPage === 'about' ? 'active' : ''}>
               <a href="#about" className="page-scroll" onClick={() => onNavigate('about')}>
-              QUIENES SOMOS
+              ¿QUIÉNES SOMOS?
               </a>
             </li>
             <li className={currentPage === 'services' ? 'active' : ''}>

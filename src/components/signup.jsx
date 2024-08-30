@@ -85,6 +85,7 @@ export const Signup = ({ onNavigate }) => {
       await createUserWithEmailAndPassword(auth, email, password)
       console.log("Account Created")
       alert("Se ha registrado correctamente")
+      onNavigate('dashboard');
     } catch(err){
       console.log(err)
       alert("Ocurrió un error en el registro")

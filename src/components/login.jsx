@@ -90,6 +90,7 @@ export const Login = ({ onNavigate }) => {
       await signInWithEmailAndPassword(auth, email, password)
       console.log("Login Succesfully")
       alert("Ha iniciado sesión correctamente")
+      onNavigate('dashboard');
     } catch(err){
       console.log(err)
       alert("No fue posible iniciar sesión")
