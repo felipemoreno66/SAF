@@ -123,6 +123,7 @@ export const Portafolio = () => {
     { category: 'buses', title: 'Bus C', price: '$80.000.000', description: 'Bus de larga distancia con 50 asientos.', image: './assets/images/bus.jpg' },
     { category: 'suvs', title: 'SUV D', price: '$70.000.000', description: 'SUV de lujo con capacidad para 7 personas.', image: './assets/images/suv.jpg' },
     { category: 'automoviles', title: 'Automóvil E', price: '$25.000.000', description: 'Automóvil compacto con 5 asientos.', image: './assets/images/automovil.jpg' },
+    { category: 'automoviles', title: 'Automóvil E', price: '$25.000.000', description: 'Automóvil compacto con 5 asientos.', image: './assets/images/automovil.jpg' },
   ];
 
   const handleNavigate = (category) => {
