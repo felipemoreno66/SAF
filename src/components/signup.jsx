@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import {auth} from './firebase';
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { UserContext } from './UserContext';
 
 const SignupContainer = styled.div`
   padding-top: 120px;
@@ -78,12 +79,15 @@ export const Signup = ({ onNavigate }) => {
   const [name, setName]=useState('')
   const [email, setEmail]=useState('')
   const [password, setPassword]=useState('')
+  const { setUser } = useContext(UserContext);
   
   const handleSubmit=async(e)=>{
     e.preventDefault()
     try{
       await createUserWithEmailAndPassword(auth, email, password)
-      console.log("Account Created")
+      await updateProfile(auth.currentUser, { displayName: name });
+      setUser({ name, email });
+      console.log("Account Created");
       alert("Se ha registrado correctamente")
       onNavigate('dashboard');
     } catch(err){

@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import {auth} from './firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { UserContext } from './UserContext';
 
 const LoginContainer = styled.div`
   padding-top: 150px;
@@ -83,11 +84,14 @@ export const Login = ({ onNavigate }) => {
 
   const [email, setEmail]=useState('')
   const [password, setPassword]=useState('')
+  const { setUser } = useContext(UserContext);
   
   const handleSubmit=async(e)=>{
     e.preventDefault()
     try{
-      await signInWithEmailAndPassword(auth, email, password)
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      setUser({ name: user.displayName, email: user.email });
       console.log("Login Succesfully")
       alert("Ha iniciado sesión correctamente")
       onNavigate('dashboard');
