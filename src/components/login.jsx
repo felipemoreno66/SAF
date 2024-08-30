@@ -89,8 +89,13 @@ export const Login = ({ onNavigate }) => {
     e.preventDefault()
     try{
       await signInWithEmailAndPassword(auth, email, password)
-      console.log("Login Succesfully")
       alert("Ha iniciado sesión correctamente")
+      const storedEmail = localStorage.getItem('userEmail');
+      if (storedEmail === email) {
+        const userName = localStorage.getItem('userName');
+        console.log(`Usuario: ${userName}`);
+      }
+      onNavigate('dashboard');
     } catch(err){
       console.log(err)
       alert("No fue posible iniciar sesión")
