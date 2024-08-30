@@ -125,7 +125,6 @@ export const Portafolio = () => {
     { category: 'automoviles', title: 'Automóvil E', price: '$25.000.000', description: 'Automóvil compacto con 5 asientos.', image: './assets/images/automovil.jpg' },
     { category: 'automoviles', title: 'Automóvil E', price: '$25.000.000', description: 'Automóvil compacto con 5 asientos.', image: './assets/images/automovil.jpg' },
     { category: 'automoviles', title: 'Automóvil E', price: '$25.000.000', description: 'Automóvil compacto con 5 asientos.', image: './assets/images/automovil.jpg' },
-    { category: 'automoviles', title: 'Automóvil E', price: '$25.000.000', description: 'Automóvil compacto con 5 asientos.', image: './assets/images/automovil.jpg' },
   ];
 
   const handleNavigate = (category) => {
