@@ -5,7 +5,6 @@ import { Features } from "./components/features";
 import { About } from "./components/about";
 import { Services } from "./components/services";
 import { Gallery } from "./components/gallery";
-import { Testimonials } from "./components/testimonials";
 import { Team } from "./components/Team";
 import { Contact } from "./components/contact";
 import { Login } from "./components/login";
@@ -46,7 +45,6 @@ const App = () => {
             <About data={landingPageData.About} />
             <Services data={landingPageData.Services} />
             <Gallery data={landingPageData.Gallery} onNavigate={setCurrentPage}/>
-            <Testimonials data={landingPageData.Testimonials} />
             <Team data={landingPageData.Team} />
             <Contact data={landingPageData.Contact} />
           </>
@@ -79,7 +77,6 @@ const App = () => {
             <About data={landingPageData.About} />
             <Services data={landingPageData.Services} />
             <Gallery data={landingPageData.Gallery} onNavigate={setCurrentPage}/>
-            <Testimonials data={landingPageData.Testimonials} />
             <Team data={landingPageData.Team} />
             <Contact data={landingPageData.Contact} />
           </>

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import {auth} from './firebase';
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { UserContext } from './UserContext';
+import { UserContext } from '../UserContext';
 
 const SignupContainer = styled.div`
   padding-top: 100px;
