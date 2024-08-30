@@ -112,8 +112,7 @@ export const Login = ({ onNavigate }) => {
           onChange={(e)=>setPassword(e.target.value)}
           required />
         </FormGroup>
-        <SubmitButton type="submit"
-        onClick={() => onNavigate('dashboard')}>Iniciar Sesión</SubmitButton>
+        <SubmitButton type="submit">Iniciar Sesión</SubmitButton>
         <ForgotPasswordLink>
           <StyledLink href="#" onClick={() => onNavigate('forgot-password')}>
             ¿Olvidaste tu contraseña?

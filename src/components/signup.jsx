@@ -113,8 +113,7 @@ export const Signup = ({ onNavigate }) => {
           onChange={(e)=>setPassword(e.target.value)}
           required />
         </FormGroup>
-        <SubmitButton type="submit"
-        onClick={() => onNavigate('dashboard')}>Registrar</SubmitButton>
+        <SubmitButton type="submit">Registrar</SubmitButton>
         <p>
           ¿Ya tienes una cuenta? <StyledLink href="#" onClick={() => onNavigate('login')}>Inicia Sesión</StyledLink>
         </p>
