@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import {auth} from './firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
