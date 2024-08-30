@@ -118,6 +118,7 @@ export const Portafolio = () => {
   // Lista de productos simulada con imágenes locales y categoría asociada
   const products = [
     { category: 'camiones', title: 'Camión A', price: '$50.000.000', description: 'Camión con capacidad de 10 toneladas.', image: './assets/images/camion.jpg' },
+    { category: 'camiones', title: 'Camión A', price: '$50.000.000', description: 'Camión con capacidad de 10 toneladas.', image: './assets/images/camion.jpg' },
     { category: 'vans', title: 'Van B', price: '$30.000.000', description: 'Van con capacidad para 12 personas.', image: './assets/images/van.jpg' },
     { category: 'buses', title: 'Bus C', price: '$80.000.000', description: 'Bus de larga distancia con 50 asientos.', image: './assets/images/bus.jpg' },
     { category: 'suvs', title: 'SUV D', price: '$70.000.000', description: 'SUV de lujo con capacidad para 7 personas.', image: './assets/images/suv.jpg' },
