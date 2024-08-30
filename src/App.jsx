@@ -52,7 +52,7 @@ const App = () => {
         return <Signup onNavigate={setCurrentPage} />;  // Pasar la función setCurrentPage a Signup
       case 'forgot-password':  // Nuevo caso para ForgotPassword
         return <ForgotPassword onNavigate={setCurrentPage} />;  // Pasar la función setCurrentPage a ForgotPassword
-      case 'portafolio1':  // Nuevo caso para ForgotPassword
+      case 'portafolio':  // Nuevo caso para ForgotPassword
         return <Portafolio onNavigate={setCurrentPage} />;  // Pasar la función setCurrentPage a ForgotPassword
         case 'dashboard':
           return <Dashboard />;
