@@ -4,7 +4,7 @@ export const Image = ({ title, descripcion, descripcionn, smallImage, onNavigate
   return (
     <div className="portfolio-item">
       <div className="hover-bg">
-        <a href="#dashboard" onClick={() => onNavigate('dashboard')}>
+        <a href="#portafolio" onClick={() => onNavigate('portafolio')}>
           <div className="hover-text">
             <h4>{title}</h4>
             <p>{descripcion}</p>

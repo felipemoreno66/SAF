@@ -1,7 +1,8 @@
 import { Image } from "./image";
 import React from "react";
 
-export const Gallery = (props, onNavigate) => {
+export const Gallery = (props) => {
+  const{data,onNavigate}=props;
   return (
     <div id="portfolio" className="text-center">
       <div className="container">
@@ -13,8 +14,8 @@ export const Gallery = (props, onNavigate) => {
         </div>
         <div className="row">
           <div className="portfolio-items">
-            {props.data
-              ? props.data.map((d, i) => (
+            {data
+              ? data.map((d, i) => (
                   <div
                     key={`${d.title}-${i}`}
                     className="col-sm-6 col-md-4 col-lg-4"
