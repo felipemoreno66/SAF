@@ -1,95 +1,170 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-const ForgotPasswordContainer = styled.div`
-  padding-top: 150px;
+// Estilos para el contenedor principal
+const Container = styled.div`
+  display: flex;
+  height: 100vh;
+  background-color: #f4f4f4;
+`;
+
+// Estilos para la barra lateral
+const Sidebar = styled.aside`
+  width: 250px;
+  background-color: #333;
+  color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+`;
+
+// Estilos para el título de la barra lateral
+const SidebarTitle = styled.h2`
+  margin-bottom: 20px;
+  font-size: 3rem;
   text-align: center;
-  min-height: 100vh;
-  background-color: #fff;
-  color: #000;
+  color: #ffffff;
 `;
 
-const Form = styled.form`
-  width: 360px;
-  max-width: 100%;
-  background-color: #f9f9f9;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+// Estilos para la lista de opciones del menú
+const MenuList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
 `;
 
-const Title = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 20px;
-`;
+// Estilos para cada opción del menú
+const MenuItem = styled.li`
+  margin-bottom: 15px;
 
-const Subtitle = styled.p`
-  margin-bottom: 40px;
-  color: #666;
-`;
+  &:first-child {
+    margin-top: 20px;
+  }
 
-const FormGroup = styled.div`
-  margin-bottom: 20px;
-  text-align: left;
-`;
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 2.5rem;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 
-const Label = styled.label`
-  font-size: 0.875rem;
-  margin-bottom: 5px;
-  display: block;
-  color: #555;
-`;
-
-const Input = styled.input`
-  width: 100%;
-  padding: 12px 15px;
-  margin-top: 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  color: #000;
-  font-size: 1rem;
-`;
-
-const SubmitButton = styled.button`
-  width: 100%;
-  padding: 12px;
-  background-color: #6366f1;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-`;
-
-const CancelLink = styled.a`
-  color: #6366f1;
-  text-decoration: none;
-  margin-top: 20px;
-  display: block;
-  &:hover {
-    text-decoration: underline;
+    &:hover {
+      background-color: #444;
+    }
   }
 `;
 
-export const Portafolio = ({ onNavigate }) => {
+// Estilos para el contenido principal
+const MainContent = styled.main`
+  flex-grow: 1;
+  padding: 20px;
+  margin-left: 250px;
+  margin-top: 80px;
+  overflow-y: auto;
+`;
+
+// Estilos para la lista de artículos
+const ProductList = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ProductItem = styled.div`
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+`;
+
+const ProductImage = styled.img`
+  width: 150px;
+  height: auto;
+  margin-right: 30px;
+  border-radius: 10px;
+`;
+
+const ProductDetails = styled.div`
+  flex-grow: 1;
+`;
+
+const ProductTitle = styled.h3`
+  font-size: 2.5rem; /* Aumenta el tamaño del título */
+  margin: 0 0 15px;
+`;
+
+const ProductPrice = styled.p`
+  font-size: 2rem; /* Aumenta el tamaño del precio */
+  color: #00a650;
+  margin: 0 0 10px;
+`;
+
+const ProductDescription = styled.p`
+  font-size: 1.8rem; /* Aumenta el tamaño de la descripción */
+  margin: 0;
+`;
+
+export const Portafolio = () => {
+  const [selectedCategory, setSelectedCategory] = useState('');
+
+  // Lista de productos simulada con imágenes locales y categoría asociada
+  const products = [
+    { category: 'camiones', title: 'Camión A', price: '$50.000.000', description: 'Camión con capacidad de 10 toneladas.', image: './assets/images/camion.jpg' },
+    { category: 'vans', title: 'Van B', price: '$30.000.000', description: 'Van con capacidad para 12 personas.', image: './assets/images/van.jpg' },
+    { category: 'buses', title: 'Bus C', price: '$80.000.000', description: 'Bus de larga distancia con 50 asientos.', image: './assets/images/bus.jpg' },
+    { category: 'suvs', title: 'SUV D', price: '$70.000.000', description: 'SUV de lujo con capacidad para 7 personas.', image: './assets/images/suv.jpg' },
+    { category: 'automoviles', title: 'Automóvil E', price: '$25.000.000', description: 'Automóvil compacto con 5 asientos.', image: './assets/images/automovil.jpg' },
+  ];
+
+  const handleNavigate = (category) => {
+    setSelectedCategory(category); // Actualiza la categoría seleccionada
+  };
+
+  const renderProducts = () => {
+    // Si no hay categoría seleccionada, muestra todos los productos
+    const filteredProducts = selectedCategory ? 
+      products.filter(product => product.category === selectedCategory) 
+      : products;
+
+    return (
+      <ProductList>
+        {filteredProducts.map((product, index) => (
+          <ProductItem key={index}>
+            <ProductImage src={product.image} alt={product.title} />
+            <ProductDetails>
+              <ProductTitle>{product.title}</ProductTitle>
+              <ProductPrice>{product.price}</ProductPrice>
+              <ProductDescription>{product.description}</ProductDescription>
+            </ProductDetails>
+          </ProductItem>
+        ))}
+      </ProductList>
+    );
+  };
+
   return (
-    <ForgotPasswordContainer>
-      <Title>¿Olvidaste tu contraseña?</Title>
-      <Subtitle>Te enviaremos instrucciones sobre cómo restablecerla.</Subtitle>
-      <Form>
-        <FormGroup>
-          <Label>Correo</Label>
-          <Input type="email" placeholder="you@yourcompany.com" required />
-        </FormGroup>
-        <SubmitButton type="submit">Restablecer Contraseña</SubmitButton>
-        <CancelLink href="#" onClick={() => onNavigate('login')}>Cancelar</CancelLink>
-      </Form>
-    </ForgotPasswordContainer>
+    <Container>
+      <Sidebar>
+        <SidebarTitle>Vehículos</SidebarTitle>
+        <MenuList>
+          <MenuItem><a href="#camiones" onClick={() => handleNavigate('camiones')}>Camiones</a></MenuItem>
+          <MenuItem><a href="#vans" onClick={() => handleNavigate('vans')}>Van's</a></MenuItem>
+          <MenuItem><a href="#buses" onClick={() => handleNavigate('buses')}>Buses</a></MenuItem>
+          <MenuItem><a href="#suvs" onClick={() => handleNavigate('suvs')}>SUV's</a></MenuItem>
+          <MenuItem><a href="#automoviles" onClick={() => handleNavigate('automoviles')}>Automóviles</a></MenuItem>
+        </MenuList>
+      </Sidebar>
+      <MainContent>
+        {renderProducts()}
+      </MainContent>
+    </Container>
   );
 };
-
