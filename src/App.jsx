@@ -5,7 +5,6 @@ import { Features } from "./components/features";
 import { About } from "./components/about";
 import { Services } from "./components/services";
 import { Gallery } from "./components/gallery";
-import { Testimonials } from "./components/testimonials";
 import { Team } from "./components/Team";
 import { Contact } from "./components/contact";
 import { Login } from "./components/login";
@@ -20,7 +19,6 @@ import { Automoviles } from "./components/automoviles";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import { Dashboard } from "./dashboard/dashboard";
-import { UserProvider } from "./UserContext";
 import "./App.css";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
@@ -46,7 +44,6 @@ const App = () => {
             <About data={landingPageData.About} />
             <Services data={landingPageData.Services} />
             <Gallery data={landingPageData.Gallery} onNavigate={setCurrentPage}/>
-            <Testimonials data={landingPageData.Testimonials} />
             <Team data={landingPageData.Team} />
             <Contact data={landingPageData.Contact} />
           </>
@@ -79,7 +76,6 @@ const App = () => {
             <About data={landingPageData.About} />
             <Services data={landingPageData.Services} />
             <Gallery data={landingPageData.Gallery} onNavigate={setCurrentPage}/>
-            <Testimonials data={landingPageData.Testimonials} />
             <Team data={landingPageData.Team} />
             <Contact data={landingPageData.Contact} />
           </>
@@ -89,14 +85,12 @@ const App = () => {
   };
 
   return (
-    <UserProvider>
     <div>
       {currentPage !== 'dashboard' && (
         <Navigation onNavigate={setCurrentPage} currentPage={currentPage} />
       )}
       {renderPage()}
     </div>
-    </UserProvider>
   );
 };
 

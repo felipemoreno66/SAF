@@ -450,7 +450,7 @@ header .intro-text {
   width: 240px;
 }
 #team .thumbnail {
-  background: transparent;
+  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
   border: 0;
 }
 #team .thumbnail .caption {

@@ -1,7 +1,8 @@
-import React, {useState} from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import {auth} from './firebase';
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { UserContext } from './UserContext';
 
 const SignupContainer = styled.div`
   padding-top: 100px;
@@ -68,18 +69,20 @@ const StyledLink = styled.a`
 `;
 
 export const Signup = ({ onNavigate }) => {
-  
+
   const [name, setName]=useState('')
   const [email, setEmail]=useState('')
   const [password, setPassword]=useState('')
+  const { setUser } = useContext(UserContext);
   
   const handleSubmit=async(e)=>{
     e.preventDefault()
     try{
       await createUserWithEmailAndPassword(auth, email, password)
+      await updateProfile(auth.currentUser, { displayName: name });
+      setUser({ name, email });
+      console.log("Account Created");
       alert("Se ha registrado correctamente")
-      localStorage.setItem('userName', name);
-      localStorage.setItem('userEmail', email);
       onNavigate('dashboard');
     } catch(err){
       console.log(err)
@@ -92,28 +95,29 @@ export const Signup = ({ onNavigate }) => {
       <Title>Conoce todo lo que SAF Mobility tiene para ofrecerte</Title>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
-          <Label>Nombre</Label>
+          <Label>Nombre *</Label>
           <Input type="text" placeholder="First and last name" 
           onChange={(e)=>setName(e.target.value)}
           required />
         </FormGroup>
         <FormGroup>
-          <Label>Correo</Label>
+          <Label>Correo *</Label>
           <Input type="email" placeholder="you@yourcompany.com" 
           onChange={(e)=>setEmail(e.target.value)}
           required />
         </FormGroup>
         <FormGroup>
-          <Label>Contraseña</Label>
+          <Label>Contraseña *</Label>
           <Input type="password" placeholder="Password" 
           onChange={(e)=>setPassword(e.target.value)}
           required />
         </FormGroup>
         <SubmitButton type="submit">Registrar</SubmitButton>
-        <p style={{ marginTop: '20px', fontsize: '2rem'}}>
+        <p>
           ¿Ya tienes una cuenta? <StyledLink href="#" onClick={() => onNavigate('login')}>Inicia Sesión</StyledLink>
         </p>
       </Form>
     </SignupContainer>
   );
 };
+

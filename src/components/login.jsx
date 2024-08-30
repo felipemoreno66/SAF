@@ -1,7 +1,8 @@
-import React, {useState} from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import {auth} from './firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { UserContext } from '../UserContext';
 
 const LoginContainer = styled.div`
   padding-top: 100px;
@@ -76,17 +77,16 @@ export const Login = ({ onNavigate }) => {
 
   const [email, setEmail]=useState('')
   const [password, setPassword]=useState('')
+  const { setUser } = useContext(UserContext);
   
   const handleSubmit=async(e)=>{
     e.preventDefault()
     try{
-      await signInWithEmailAndPassword(auth, email, password)
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      setUser({ name: user.displayName, email: user.email });
+      console.log("Login Succesfully")
       alert("Ha iniciado sesión correctamente")
-      const storedEmail = localStorage.getItem('userEmail');
-      if (storedEmail === email) {
-        const userName = localStorage.getItem('userName');
-        console.log(`Usuario: ${userName}`);
-      }
       onNavigate('dashboard');
     } catch(err){
       console.log(err)
@@ -116,7 +116,7 @@ export const Login = ({ onNavigate }) => {
             ¿Olvidaste tu contraseña?
           </StyledLink>
         </ForgotPasswordLink>
-        <p style={{ marginTop: '20px', fontsize: '2rem'}}>
+        <p style={{ marginTop: '20px' }}>
           ¿Aún no tiene una cuenta? <StyledLink href="#" onClick={() => onNavigate('signup')}>Regístrate</StyledLink>
         </p>
       </Form>
