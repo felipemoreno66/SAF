@@ -24,7 +24,10 @@ const SidebarItem = styled.div`
   border-radius: 5px;
   cursor: pointer;
   background-color: ${(props) => (props.active ? '#4f46e5' : 'transparent')};
-  color: ${(props) => (props.isDarkMode ? (props.active ? '#ffffff' : '#9ca3af') : '#000000')};
+  color: ${(props) => 
+    props.isDarkMode 
+      ? (props.active ? '#ffffff' : '#9ca3af') 
+      : (props.active ? '#ffffff' : '#000000')};
   display: flex;
   align-items: center;
   justify-content: ${(props) => (props.isCollapsed ? 'center' : 'flex-start')};
@@ -66,7 +69,7 @@ export const Sidebar = ({ items, activeItem, onItemSelect, isDarkMode }) => {
 
   const iconMap = {
     Dashboard: <HomeIcon />,
-    Pages: <LayersIcon />,
+    Vehiculos: <LayersIcon />,
     Logout: <MeetingRoomIcon />,
   };
 

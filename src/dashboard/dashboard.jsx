@@ -8,7 +8,7 @@ import { DashboardHeader } from '../dashboard_components/DashboardHeader';
 
 const DashboardWrapper = styled.div`
   display: flex;
-  height: 100vh;
+  height:100vh;
   background-color: ${(props) => (props.isDarkMode ? '#111827' : '#f7f8fa')}; /* Fondo del dashboard según el modo */
   color: ${(props) => (props.isDarkMode ? '#ffffff' : '#000000')}; /* Color del texto según el modo */
 `;
@@ -52,7 +52,7 @@ export const Dashboard = () => {
         />
         <ContentWrapper>
           <DashboardHeader 
-            title="Dashboard" 
+            title="SAF DASHBOARD" 
             imageUrl={null} 
             isDarkMode={isDarkMode} 
             toggleDarkMode={toggleDarkMode} 
