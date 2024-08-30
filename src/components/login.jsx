@@ -15,7 +15,6 @@ const LoginContainer = styled.div`
   color: #000;
   overflow-y: auto;
 `;
-
 const Form = styled.form`
   width: 400px;
   max-width: 100%;
@@ -24,24 +23,20 @@ const Form = styled.form`
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 `;
-
 const Title = styled.h2`
   font-size: 3rem;
   margin-bottom: 20px;
 `;
-
 const FormGroup = styled.div`
   margin-bottom: 5px;
   text-align: left;
 `;
-
 const Label = styled.label`
   font-size: 2rem;
   margin-bottom: 1px;
   display: block;
   color: #000000;
 `;
-
 const Input = styled.input`
   width: 100%;
   padding: 10px 15px;
@@ -53,7 +48,6 @@ const Input = styled.input`
   color: #000;
   font-size: 1.5rem;
 `;
-
 const SubmitButton = styled.button`
   width: 100%;
   padding: 5px;
@@ -65,7 +59,6 @@ const SubmitButton = styled.button`
   cursor: pointer;
   margin-top: 2px;
 `;
-
 const StyledLink = styled.a`
   color: ##6366F1;
   text-decoration: none;
@@ -73,7 +66,6 @@ const StyledLink = styled.a`
     text-decoration: underline;
   }
 `;
-
 const ForgotPasswordLink = styled.div`
   font-size: 2rem;
   margin-top: 10px;
