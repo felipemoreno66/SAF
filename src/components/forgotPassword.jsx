@@ -4,7 +4,7 @@ import { sendPasswordResetEmail } from "firebase/auth";
 import {auth} from "./firebase";
 
 const ForgotPasswordContainer = styled.div`
-  padding-top: 150px;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,7 @@ const ForgotPasswordContainer = styled.div`
 `;
 
 const Form = styled.form`
-  width: 360px;
+  width: 400px;
   max-width: 100%;
   background-color: #f9f9f9;
   padding: 30px;
@@ -25,53 +25,55 @@ const Form = styled.form`
 `;
 
 const Title = styled.h2`
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 20px;
 `;
 
 const Subtitle = styled.p`
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   color: #666;
 `;
 
 const FormGroup = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   text-align: left;
 `;
 
 const Label = styled.label`
-  font-size: 0.875rem;
-  margin-bottom: 5px;
+  font-size: 2rem;
+  margin-bottom: 1px;
   display: block;
-  color: #555;
+  color: #000000;
 `;
 
 const Input = styled.input`
   width: 100%;
-  padding: 12px 15px;
-  margin-top: 8px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   border-radius: 5px;
   border: 1px solid #ccc;
   background-color: #fff;
   color: #000;
-  font-size: 1rem;
+  font-size: 1.5rem;
 `;
 
 const SubmitButton = styled.button`
   width: 100%;
-  padding: 12px;
+  padding: 5px;
   background-color: #6366f1;
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 2rem;
   cursor: pointer;
+  margin-top: 2px;
 `;
 
 const CancelLink = styled.a`
   color: #6366f1;
   text-decoration: none;
-  margin-top: 20px;
+  margin-top: 10px;
   display: block;
   &:hover {
     text-decoration: underline;

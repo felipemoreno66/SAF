@@ -5,7 +5,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { UserContext } from './UserContext';
 
 const LoginContainer = styled.div`
-  padding-top: 150px;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,7 +18,7 @@ const LoginContainer = styled.div`
 `;
 
 const Form = styled.form`
-  width: 360px;
+  width: 400px;
   max-width: 100%;
   background-color: #f9f9f9;
   padding: 30px;
@@ -27,48 +27,48 @@ const Form = styled.form`
 `;
 
 const Title = styled.h2`
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 20px;
 `;
 
 const FormGroup = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   text-align: left;
 `;
 
 const Label = styled.label`
-  font-size: 0.875rem;
-  margin-bottom: 5px;
+  font-size: 2rem;
+  margin-bottom: 1px;
   display: block;
-  color: #555;
+  color: #000000;
 `;
 
 const Input = styled.input`
   width: 100%;
-  padding: 12px 15px;
-  margin-top: 8px;
+  padding: 10px 15px;
+  margin-top: 10px;
   margin-bottom: 20px;
   border-radius: 5px;
   border: 1px solid #ccc;
   background-color: #fff;
   color: #000;
-  font-size: 1rem;
+  font-size: 1.5rem;
 `;
 
 const SubmitButton = styled.button`
   width: 100%;
-  padding: 12px;
+  padding: 5px;
   background-color: #6366f1;
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 2rem;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 2px;
 `;
 
 const StyledLink = styled.a`
-  color: #007bff;
+  color: ##6366F1;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -76,6 +76,7 @@ const StyledLink = styled.a`
 `;
 
 const ForgotPasswordLink = styled.div`
+  font-size: 2rem;
   margin-top: 10px;
   text-align: center;
 `;
